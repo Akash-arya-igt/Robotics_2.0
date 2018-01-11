@@ -1,0 +1,13 @@
+*.user
+.vscode
+Source/.vs/
+Source/packages/
+Source/TestResults
+Binaries
+Output
+[Bb]in/
+[Oo]bj/
+Source/packages
+Deployment/IGTWebjetQMonitorDeployment/packages/
+Deployment/IGTWebjetQMonitorDeployment/.vs/
+Source/Igt.Webjet.QMonitoring.Dashboard/Properties/PublishProfiles/QMS.pubxml

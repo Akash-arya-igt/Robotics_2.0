@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IGT.Webjet.BusinessEntities\IGT.Webjet.BusinessEntities.csproj" />
+    <ProjectReference Include="..\IGT.Webjet.CloudEngine\IGT.Webjet.CloudEngine.csproj" />
+    <ProjectReference Include="..\IGT.Webjet.MessageComposer\IGT.Webjet.MessageComposer.csproj" />
+    <ProjectReference Include="..\IGT.Webjet.RoboticsLogger\IGT.Webjet.RoboticsLogger.csproj" />
+    <ProjectReference Include="..\IGT.Webjet.ServiceConfigurationEngine\IGT.Webjet.ServiceConfigurationEngine.csproj" />
+  </ItemGroup>
+
+</Project>
