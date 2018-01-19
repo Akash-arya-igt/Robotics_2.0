@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: ConfigQ2PNRRemoval
+  name: q2pnrremoval-config
 data:
-  DELAY_INTERVAL: 60
+  DELAY_INTERVAL: "60"
   LOCAL_LOG_PATH: RoboticsLog/log.txt
   SERVICE_NAME: RemovePNRFromQ
   CLOUD_LOGGING_Q_NAME: roboticsloggingq
   CONNECTION_STRING: DefaultEndpointsProtocol=https;AccountName=webjetroboticsstorage;AccountKey=owNaL/vsmD33k7xasoxLdqHiNOTk4j8of1a4Bk+gC+2Ub31k/WM2CZoTbH+7qbORmSJYRzg7mtw+tu7VZJLbrw==;EndpointSuffix=core.windows.net
   CLOUD_PROVIDER: Azure
   PCC: 5KL6
-  GAL_Q_NUMBER: 96
-  DESTINATION_AZURE_Q_NAME: 
+  GAL_Q_NUMBER: "96"
+  DESTINATION_AZURE_Q_NAME: ""

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wauticketingpcc-authdetail-config
+data:
+  PCC: 5KL6
+  SERVICE_END_POINT: https://apac.copy-webservices.travelport.com/B2BGateway/service/XMLSelect
+  PROFILE: DynGalileoCopy_5KL6
+  USERID: PCC5KL6
+  PASSWORD: Webj5kl6
+  GDS_PROVIDER_SERIVCE: GAL_XMLSelect

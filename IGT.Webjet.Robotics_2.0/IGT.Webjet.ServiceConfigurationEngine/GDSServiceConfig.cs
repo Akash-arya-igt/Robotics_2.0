@@ -23,15 +23,15 @@ namespace IGT.Webjet.ServiceConfigurationEngine
             GalQNumber = EnvironmentUtil.GetIntEnvironmentVarValue("GAL_Q_NUMBER");
             DestinationCloudQName = EnvironmentUtil.GetStringEnvironmentVarValue("DESTINATION_AZURE_Q_NAME");
             StorngTypeServiceName = ServiceName.ToEnum<RoboticsServiceNameEnum>();
-            var gdsProviderSerivce = EnvironmentUtil.GetStringEnvironmentVarValue(PCC + "_GDS_PROVIDER_SERIVCE");
+            var gdsProviderSerivce = EnvironmentUtil.GetStringEnvironmentVarValue("GDS_PROVIDER_SERIVCE");
 
             GDSServiceAuthDetail objHAP = new GDSServiceAuthDetail()
             {
                 PCC = PCC,
-                GWSConnURL = EnvironmentUtil.GetStringEnvironmentVarValue(PCC + "_SERVICE_END_POINT"),
-                Profile = EnvironmentUtil.GetStringEnvironmentVarValue(PCC + "_PROFILE"),
-                UserID = EnvironmentUtil.GetStringEnvironmentVarValue(PCC + "_USERID"),
-                Password = EnvironmentUtil.GetStringEnvironmentVarValue(PCC + "_PASSWORD"),
+                GWSConnURL = EnvironmentUtil.GetStringEnvironmentVarValue("SERVICE_END_POINT"),
+                Profile = EnvironmentUtil.GetStringEnvironmentVarValue("PROFILE"),
+                UserID = EnvironmentUtil.GetStringEnvironmentVarValue("USERID"),
+                Password = EnvironmentUtil.GetStringEnvironmentVarValue("PASSWORD"),
                 GDSProviderService = gdsProviderSerivce.ToEnum<GDSProviderServiceEnum>()
             };
 

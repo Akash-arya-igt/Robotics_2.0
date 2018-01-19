@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: azure-detail-config
+data:
+  CLOUD_LOGGING_Q_NAME: roboticsloggingq
+  STORAGE_CONNECTION_STRING: DefaultEndpointsProtocol=https;AccountName=webjetroboticsstorage;AccountKey=owNaL/vsmD33k7xasoxLdqHiNOTk4j8of1a4Bk+gC+2Ub31k/WM2CZoTbH+7qbORmSJYRzg7mtw+tu7VZJLbrw==;EndpointSuffix=core.windows.net
+  CLOUD_PROVIDER: Azure

@@ -1,0 +1,72 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: q2-pnr-removal-service-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: roboticsmicroservice
+    spec:
+      containers:
+      - name: q2-pnr-removal-service
+        image: akasharya/queue-read
+        env:
+        - name: DELAY_INTERVAL
+          value: "60"
+        - name: LOCAL_LOG_PATH
+          value: "RoboticsLog/log.0txt"
+        - name: SERVICE_NAME
+          value: "RemovePNRFromQ"
+        - name: GAL_Q_NUMBER
+          value: "96"
+        - name: DESTINATION_AZURE_Q_NAME
+          value: ""
+        - name: PCC
+          valueFrom:
+            configMapKeyRef:
+              name: wauticketingpcc-authdetail-config
+              key: PCC
+        - name: SERVICE_END_POINT
+          valueFrom:
+            configMapKeyRef:
+              name: wauticketingpcc-authdetail-config
+              key: SERVICE_END_POINT
+        - name: PROFILE
+          valueFrom:
+            configMapKeyRef:
+              name: wauticketingpcc-authdetail-config
+              key: PROFILE
+        - name: USERID
+          valueFrom:
+            configMapKeyRef:
+              name: wauticketingpcc-authdetail-config
+              key: USERID
+        - name: PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: wauticketingpcc-authdetail-config
+              key: PASSWORD
+        - name: GDS_PROVIDER_SERIVCE
+          valueFrom:
+            configMapKeyRef:
+              name: wauticketingpcc-authdetail-config
+              key: GDS_PROVIDER_SERIVCE
+        - name: CLOUD_PROVIDER
+          valueFrom:
+            configMapKeyRef:
+              name: azure-detail-config
+              key: CLOUD_PROVIDER
+        - name: CLOUD_LOGGING_Q_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: azure-detail-config
+              key: CLOUD_LOGGING_Q_NAME
+        - name: CONNECTION_STRING
+          valueFrom:
+            configMapKeyRef:
+              name: azure-detail-config
+              key: STORAGE_CONNECTION_STRING
+        ports:
+          - containerPort: 27017

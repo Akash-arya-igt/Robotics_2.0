@@ -1,8 +1,8 @@
 *.user
 .vscode
-Source/.vs/
-Source/packages/
-Source/TestResults
+IGT.Webjet.Robotics_2.0/.vs/
+IGT.Webjet.Robotics_2.0/packages/
+IGT.Webjet.Robotics_2.0/TestResults
 Binaries
 Output
 [Bb]in/
