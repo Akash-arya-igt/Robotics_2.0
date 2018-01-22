@@ -21,4 +21,3 @@ WORKDIR /app
 COPY /bin/Release/netcoreapp2.0/publish/ .
 
 ENTRYPOINT [ "dotnet", "IGT.Webjet.ReadQueueService.dll" ]
-https://api.gitkraken.com/activate/38a39074-e5b1-464a-bd39-595fbf02a645?email=akash.arya%40igt.in
