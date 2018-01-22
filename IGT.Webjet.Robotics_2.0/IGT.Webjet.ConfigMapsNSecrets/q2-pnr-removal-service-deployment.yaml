@@ -16,7 +16,7 @@ spec:
         - name: DELAY_INTERVAL
           value: "60"
         - name: LOCAL_LOG_PATH
-          value: "RoboticsLog/log.0txt"
+          value: "RoboticsLog/log.txt"
         - name: SERVICE_NAME
           value: "RemovePNRFromQ"
         - name: GAL_Q_NUMBER

@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: robotics-logging-service-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: roboticsmicroservice
+    spec:
+      containers:
+      - name: robotics-logging-service
+        image: akasharya/robotics-logging:robotics-microservice
+        env:
+        - name: DELAY_INTERVAL
+          value: "60"
+        - name: LOCAL_LOG_PATH
+          value: "RoboticsLog/log.txt"
+        - name: SERVICE_NAME
+          value: "RoboticsLogging"
+        - name: SOURCE_NAME
+          value: "Robotics-Dev-Logging"
+        - name: SUMO_COLLECTION_URL
+          value: "https://collectors.au.sumologic.com/receiver/v1/http/ZaVnC4dhaV25jwJUbCVl8MwscQZhBuRUR6BFS7Ia_UIIpdq6hvkeL-KB7bl47a16t6g8vMCAip8EP5b9Ga05pmz4FwZuxTcScdfCctPUF45Svm9bDTuGGg=="
+        - name: CLOUD_PROVIDER
+          valueFrom:
+            configMapKeyRef:
+              name: azure-detail-config
+              key: CLOUD_PROVIDER
+        - name: CLOUD_LOGGING_Q_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: azure-detail-config
+              key: CLOUD_LOGGING_Q_NAME
+        - name: CONNECTION_STRING
+          valueFrom:
+            configMapKeyRef:
+              name: azure-detail-config
+              key: STORAGE_CONNECTION_STRING
+        ports:
+          - containerPort: 27017

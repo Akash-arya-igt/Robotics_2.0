@@ -106,6 +106,7 @@ namespace IGT.Webjet.ReadQueueService
                             }
 
                             //ADD MESSAGE TO LOGGING QUEUE
+                            _pnrMovementMsg = string.Format(_pnrMovementMsg, previousPNR.Recloc);
                             LogMsg logMsg = LoggingMsgComposer.GetLogMsg(RoboticsLogLevelEnum.Info, _pnrMovementMsg, _serviceName, _qNumber);
                             _objCloudLoggingQ.AddMsgToLoggingQ(logMsg);
                         }
